@@ -1,0 +1,4 @@
+This file contains a record of mostly trivial mistakes left over by the developers. Since these mistakes will be corrected in the re-sourcification,
+I want to log them somewhere. Some of these mistakes may only exist in early versions of the scripts and may have been corrected later on in development.
+
+- scripts/codescripts/delete.csc - debug message: forgot to change '.gsc' to '.csc' in the file name (this is also the case in the T6 version of delete.csc)
