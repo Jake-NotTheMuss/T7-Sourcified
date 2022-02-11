@@ -73,7 +73,7 @@ function player_stats_init()
 	self  globallogic_score::initPersStat( "insta_kill_pickedup",false);
 	self  globallogic_score::initPersStat( "full_ammo_pickedup",false);
 	self  globallogic_score::initPersStat( "double_points_pickedup",false);
-	self  globallogic_score::initpersstat( "meat_stink_pickedup", false );
+	self  globallogic_score::initpersstat( "meat_stink_pickedup",false);
 	self  globallogic_score::initPersStat( "carpenter_pickedup",false);
 	self  globallogic_score::initPersStat( "fire_sale_pickedup",false);
 	self  globallogic_score::initPersStat( "minigun_pickedup",false);
@@ -293,7 +293,7 @@ function update_players_stats_at_match_end( players )
 
 function update_playing_utc_time( matchEndUTCTime )
 {
-	current_days = int (matchEndUTCTime / 86400); //days
+	current_days = int (matchEndUTCTime / 86400); // days
 
 	last_days = self get_global_stat( "TIMESTAMPLASTDAY1" );
 	last_days = int (last_days / 86400);
@@ -302,7 +302,7 @@ function update_playing_utc_time( matchEndUTCTime )
 	if ( diff_days > 0 )
 	{
 		// shift the left values
-		for( i = 5; i > diff_days; i--)
+		for( i = 5; i > diff_days ; i--)
 		{
 			timestamp_name = "TIMESTAMPLASTDAY" + (i - diff_days);
 			timestamp_name_to = "TIMESTAMPLASTDAY" + i;
@@ -310,7 +310,7 @@ function update_playing_utc_time( matchEndUTCTime )
 			self set_global_stat( timestamp_name_to, timestamp_value );
 		}
 
-		for ( i = 2; i <= diff_days && i < 6; i++ )
+		for ( i = 2; (i <= diff_days && i < 6) ; i++)
 		{
 			timestamp_name = "TIMESTAMPLASTDAY" + i;
 			self set_global_stat( timestamp_name, 0 );

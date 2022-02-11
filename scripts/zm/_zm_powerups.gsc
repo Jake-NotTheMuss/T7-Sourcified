@@ -242,7 +242,7 @@ function powerup_hud_monitor( )
 				player = players[playerIndex];
 
 				/#
-				if ( IS_TRUE( player.pers["isBot"] ) )
+				if (IS_TRUE( player.pers["isBot"] ))
 					continue;
 				#/
 		
@@ -363,11 +363,11 @@ function get_next_powerup()
 function get_valid_powerup()
 {
 	/#
-		if ( isdefined( level.zombie_devgui_power ) && level.zombie_devgui_power == 1 )
-		{
-			level.zombie_devgui_power = 0;
-			return level.zombie_powerup_array[level.zombie_powerup_index];
-		}
+	if ( isdefined( level.zombie_devgui_power ) && level.zombie_devgui_power == 1 )
+	{
+		level.zombie_devgui_power = 0;
+		return level.zombie_powerup_array[level.zombie_powerup_index];
+	}
 	#/
 
 	if ( isdefined( level.zombie_powerup_boss ) )
@@ -684,7 +684,7 @@ function powerup_drop(drop_point)
 	powerup powerup_setup();
 
 	print_powerup_drop( powerup.powerup_name, debug );
-	bb::logpowerupevent( powerup, undefined, "_dropped" );
+	bb::logpowerupevent(powerup, undefined, "_dropped");
 	powerup thread powerup_timeout();
 	powerup thread powerup_wobble();
 	powerup thread powerup_grab();
@@ -1107,7 +1107,7 @@ function powerup_grab(powerup_team)
 				}
 				
 				demo::bookmark( "zm_player_powerup_grabbed", gettime(), player );
-				bb::logpowerupevent( self, player, "_grabbed" );
+				bb::logpowerupevent(self, player, "_grabbed");
 				if (isDefined(self.hash_id))
 				{
 					player RecordMapEvent(ZM_MAP_EVENT_POWERUP_GRABBED, GetTime(), grabber.origin, level.round_number, self.hash_id);
@@ -1417,7 +1417,7 @@ function powerup_timeout()
 	}
 	
 	self notify( "powerup_timedout" );
-	bb::logpowerupevent( self, undefined, "_timedout" );
+	bb::logpowerupevent(self, undefined, "_timedout");
 	self powerup_delete();
 }
 
@@ -1623,15 +1623,15 @@ function tesla_powerup_active()
 function print_powerup_drop( powerup, type )
 {
 	/#
-		if( !isdefined( level.powerup_drop_time ) )
+		if( !IsDefined( level.powerup_drop_time ) )
 		{
 			level.powerup_drop_time = 0;
 			level.powerup_random_count = 0;
 			level.powerup_score_count = 0;
 		}
 		
-		time = ( getTime() - level.powerup_drop_time ) * 0.001;
-		level.powerup_drop_time = getTime();
+		time = ( GetTime() - level.powerup_drop_time ) * 0.001;
+		level.powerup_drop_time = GetTime();
 
 		if( type == "random" )
 		{
