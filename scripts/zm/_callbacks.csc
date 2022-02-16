@@ -143,10 +143,10 @@ function entityspawned(localClientNum)
 			//self thread vehicle::vehicle_rumble(localClientNum);
 		}
 		
-		// if( self.type == "helicopter" )
-		// {
-		// 	//self thread helicopter::startfx_loop( localClientNum );
-		// }
+		if( self.type == "helicopter" )
+		{
+			//self thread helicopter::startfx_loop( localClientNum );
+		}
 	}
 	else if ( self.type == "actor"  )
 	{		
