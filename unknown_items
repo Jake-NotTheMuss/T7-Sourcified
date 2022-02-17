@@ -1,0 +1,31 @@
+This file contains some unknown items from the source scripts. Unknown items are data that
+cannot be extracted from the compiled fastfiles, such as:
+- Preprocessor directives
+- Macros
+- Debug strings
+- Variable names, function names, etc.
+- Comments
+
+Usually, if an item in a script is unknown, I don't add it to this repository until I can
+verify what the item is, but in some cases, there will be a reasonable certainty of what
+the item is, and the item will have a low importance and low effect on the overall script
+that it is worthwhile to include the script despite the lack of absolute certainty.
+
+----------------
+
+- DEBUGSTRING
+  scripts/shared/animation_shared.gsc: Unknown debug strings in debug_print().
+    What these strings probably are is clear given the lengths of the strings, which are known,
+    but I cannot technically verify them to be what they are at this time. The strings I put in
+    that file in place of them are certainly the same length as the original dev strings, and
+    given the context and the patterns observed in other source files, I'm fairly certain those
+    are the correct strings.
+
+----------------
+
+- MACRO
+  scripts/zm/_zm_bot.gsc: Unknown macro definitions at start of file.
+    The 'must match code' comment and the several empty lines below it suggest that there are
+    some macro definitions there, probably 4 or 5 definitions that don't seem to be used
+    anywhere in the source. I'm not sure what they could be, but the C header file that they
+    are supposed to match is given (hkai_influence.h).
