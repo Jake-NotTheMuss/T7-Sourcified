@@ -1,4 +1,24 @@
-This file contains a record of mostly trivial mistakes left over by the developers. Since these mistakes will be corrected in the re-sourcification,
-I want to log them somewhere. Some of these mistakes may only exist in early versions of the scripts and may have been corrected later on in development.
+This file contains a record of mostly trivial mistakes left over by the developers. Since these
+mistakes will be corrected in the re-sourcification, I want to log them somewhere.
 
-- scripts/codescripts/delete.csc - debug message: forgot to change '.gsc' to '.csc' in the file name (this is also the case in the T6 version of delete.csc)
+Mistakes can be of the following types:
+- Misspelling in debug strings or comments (SPELLING)
+- An oversight by the developers (OVERSIGHT) (see entries of this type for examples)
+
+----------------
+
+- SPELLING
+  scripts/codescripts/delete.csc: In main() at line 15
+    Forgot to change '.gsc' to'.csc' in the string passed to println()
+    (This is also the case in the T6 version of delete.csc.)
+
+----------------
+
+- OVERSIGHT
+  scripts/zm/_zm_devgui.gsc: in function zombie_devgui_allow_fog()
+    The fog Dvars are restored but the cull distance is not restored.
+    The function disable_fog_in_noclip() watches for when any player goes into noclip mode,
+    and disables fog and sets cull distance to zero while any player is in noclip mode. Then,
+    once no players are in noclip mode, fog and cull distance are restored to their original
+    values. zombie_devgui_allow_fog() kills the disable_fog_in_noclip() thread, and then
+    restores the fog as needed, but the cull distance is not restored.
