@@ -3,7 +3,8 @@ cannot be extracted from the compiled fastfiles, such as:
 - Preprocessor directives
 - Macros
 - Debug strings
-- Variable names, function names, etc.
+- Identifiers
+- Compile-time hashed strings
 - Comments
 
 Usually, if an item in a script is unknown, I don't add it to this repository until I can
