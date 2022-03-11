@@ -30,3 +30,13 @@ that it is worthwhile to include the script despite the lack of absolute certain
     some macro definitions there, probably 4 or 5 definitions that don't seem to be used
     anywhere in the source. I'm not sure what they could be, but the C header file that they
     are supposed to match is given (hkai_influence.h).
+
+----------------
+
+- DEBUGSTRING
+  scripts/zm/zm_genesis_amb.csc: Unknown debug strings in startZmbSpawnerSoundLoops().
+    The content of these strings can be approximated using similar functions from other scripts
+    such as startSoundLoops() in audio_shared.csc, and the strings that I put in the file are
+    the same length as the actual dev strings (except possibly the last dev string whose length
+    is always unknown, due to the length of a string being calculated from the start offset of
+    the next string in the table).
