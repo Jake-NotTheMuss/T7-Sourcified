@@ -1292,14 +1292,14 @@ function treasure_chest_ChooseWeightedRandomWeapon( player )
 	{
 		keys = player [[level.CustomRandomWeaponWeights]](keys); 
 	}
-	/#
-		forced_weapon_name = getDvar( "scr_force_weapon" );
-		forced_weapon = GetWeapon( forced_weapon_name );
-		if ( forced_weapon_name != "" && isdefined( level.zombie_weapons[ forced_weapon ] ) )
-		{
-			ArrayInsert( kets, forced_weapon, 0 );
-		}
-	#/
+/#
+	forced_weapon_name = GetDvarString( "scr_force_weapon" );
+	forced_weapon = GetWeapon( forced_weapon_name );
+	if ( forced_weapon_name != "" && IsDefined( level.zombie_weapons[ forced_weapon ] ) )
+	{
+		ArrayInsert( keys, forced_weapon, 0 );
+	}
+#/
 	pap_triggers = zm_pap_util::get_triggers();
 	for ( i = 0; i < keys.size; i++ )
 	{
