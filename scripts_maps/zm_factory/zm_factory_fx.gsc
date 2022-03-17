@@ -40,7 +40,7 @@
 #precache( "fx", "electric/fx_elec_sparks_burst_sm_circuit_os" );	
 #precache( "fx", "electric/fx_elec_sparks_burst_sm_circuit_os" );
 
-REGISTER_SYSTEM( "zm_giant_fx", &__init__, undefined )
+REGISTER_SYSTEM( "zm_factory_fx", &__init__, undefined )
 	
 function __init__()
 {
