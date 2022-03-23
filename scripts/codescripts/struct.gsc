@@ -91,14 +91,14 @@ function CreateStruct( struct, type, name )
 	}
 }
 
-function CreateScriptBundleList( items, type, name )
+function CreateScriptBundleList( items, assetType, name )
 {
 	if ( !isdefined( level.struct ) )
 	{
 		init_structs();
 	}
 
-	level.scriptbundlelists[ type ][ name ] = items;
+	level.scriptbundlelists[ assetType ][ name ] = items;
 }
 
 function init()
